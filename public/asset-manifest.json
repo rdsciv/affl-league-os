@@ -1,0 +1,626 @@
+{
+  "adapterVersion": "affl-adapter-0.1.0",
+  "brand": [
+    {
+      "bytes": 1896652,
+      "destination": "/brand/affl-mark.png",
+      "kind": "mark",
+      "note": "Primary AFFL league mark",
+      "sha256": "cdb324a0bcbd60d1",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/affl-mark.png"
+    },
+    {
+      "bytes": 1698781,
+      "destination": "/brand/affl-banner.png",
+      "kind": "banner",
+      "note": "AFFL banner lockup",
+      "sha256": "173cd6917296d3eb",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/affl-banner.png"
+    },
+    {
+      "bytes": 9906,
+      "destination": "/brand/favicon-64.png",
+      "kind": "favicon",
+      "note": "AFFL favicon",
+      "sha256": "c4920cdfbea88d25",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/favicon-64.png"
+    },
+    {
+      "bytes": 259631,
+      "destination": "/brand/affl-mark-640.png",
+      "kind": "mark-derivative",
+      "note": "Web-optimised AFFL mark",
+      "sha256": "cdb324a0bcbd60d1",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/affl-mark.png",
+      "transform": "downsampled to 640px wide for web delivery"
+    }
+  ],
+  "franchises": [
+    {
+      "bytes": 6016,
+      "destination": "/franchises/m02-2014.jpg",
+      "franchiseId": "m02",
+      "fromSeason": 2014,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "13edbf1c232006de",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/151975bda359.jpg",
+      "teamName": "Kansas City Missourians",
+      "toSeason": 2014
+    },
+    {
+      "bytes": 177062,
+      "destination": "/franchises/m02-2015.jpg",
+      "franchiseId": "m02",
+      "fromSeason": 2015,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "e765bc18f199e143",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/a9057bd63382.jpg",
+      "teamName": "The Dalles Cowboys",
+      "toSeason": 2015
+    },
+    {
+      "bytes": 10933,
+      "destination": "/franchises/m02-2016.jpg",
+      "franchiseId": "m02",
+      "fromSeason": 2016,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "303c736ba74e4fb5",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/12e8d751b93c.jpg",
+      "teamName": "Cincinnati Sinners",
+      "toSeason": 2016
+    },
+    {
+      "bytes": 145746,
+      "destination": "/franchises/m02.png",
+      "franchiseId": "m02",
+      "fromSeason": 2017,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "0eedfadf0c9771c3",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/cucks.png",
+      "teamName": "DC Mighty Cucks",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 13745,
+      "destination": "/franchises/m05.jpg",
+      "franchiseId": "m05",
+      "fromSeason": 2019,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "e0f7e4671cfb5374",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/4fd947dd128a.jpg",
+      "teamName": "San Diego Shadowcocks",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 151384,
+      "destination": "/franchises/m06-2018.png",
+      "franchiseId": "m06",
+      "fromSeason": 2018,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "ceae365edff4be24",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/e9f3e8712b37.png",
+      "teamName": "Fairview Fat Cats",
+      "toSeason": 2018
+    },
+    {
+      "bytes": 256719,
+      "destination": "/franchises/m06-2019.png",
+      "franchiseId": "m06",
+      "fromSeason": 2019,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "c708556bb79ca4b2",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/27475e641e1a.png",
+      "teamName": "Fairview Fat Cats",
+      "toSeason": 2022
+    },
+    {
+      "bytes": 23092,
+      "destination": "/franchises/m06-2023.png",
+      "franchiseId": "m06",
+      "fromSeason": 2023,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "79b525106154980e",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/4e3b58c52f7b.png",
+      "teamName": "Fairview Fat Cats",
+      "toSeason": 2023
+    },
+    {
+      "bytes": 73659,
+      "destination": "/franchises/m06.png",
+      "franchiseId": "m06",
+      "fromSeason": 2024,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "11e40fb984676a35",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/06042c09ba0f.png",
+      "teamName": "Fairview Fat Cats",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 80216,
+      "destination": "/franchises/m07.jpg",
+      "franchiseId": "m07",
+      "fromSeason": 2022,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "5486d19c1d85f9a5",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/1f345cc38124.jpg",
+      "teamName": "Chula Vista Chupacabras",
+      "toSeason": 2023
+    },
+    {
+      "bytes": 365714,
+      "destination": "/franchises/m08.png",
+      "franchiseId": "m08",
+      "fromSeason": 2024,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "b664f0458cbd555f",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/bca2e02e50d7.png",
+      "teamName": "Goleta Gringos",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 8164,
+      "destination": "/franchises/m09.gif",
+      "franchiseId": "m09",
+      "fromSeason": 2014,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "af1d5bb5a9447a53",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/99752fbc7928.gif",
+      "teamName": "Pawtucket Patriots",
+      "toSeason": 2014
+    },
+    {
+      "bytes": 38548,
+      "destination": "/franchises/m10-2017.jpg",
+      "franchiseId": "m10",
+      "fromSeason": 2017,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "e5f8d5d77bf7d57e",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/17be3c57cb51.jpg",
+      "teamName": "Winston-Salem Wake Snakes",
+      "toSeason": 2017
+    },
+    {
+      "bytes": 22175,
+      "destination": "/franchises/m10.jpg",
+      "franchiseId": "m10",
+      "fromSeason": 2018,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "ae5d7fade902738e",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/8392c16acb8e.jpg",
+      "teamName": "Winston-Salem Wake Snakes",
+      "toSeason": 2020
+    },
+    {
+      "bytes": 20328,
+      "destination": "/franchises/m11-2015.png",
+      "franchiseId": "m11",
+      "fromSeason": 2015,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "ec2ca432ab437d48",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/cb20dd31a389.png",
+      "teamName": "Squaw Valley Skinners",
+      "toSeason": 2016
+    },
+    {
+      "bytes": 359257,
+      "destination": "/franchises/m11-2019.jpg",
+      "franchiseId": "m11",
+      "fromSeason": 2019,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "e32944d0f4852f89",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/fd90d4d9aae1.jpg",
+      "teamName": "Squaw Valley Skinners",
+      "toSeason": 2022
+    },
+    {
+      "bytes": 28453,
+      "destination": "/franchises/m11.jpg",
+      "franchiseId": "m11",
+      "fromSeason": 2023,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "57410d87a2a22a99",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/f646d3458763.jpg",
+      "teamName": "Squaw Valley Skinners",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 62365,
+      "destination": "/franchises/m12.jpg",
+      "franchiseId": "m12",
+      "fromSeason": 2014,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "143775f42e910369",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/9f4a09db5abc.jpg",
+      "teamName": "Muck City Mad Dawgs",
+      "toSeason": 2020
+    },
+    {
+      "bytes": 54871,
+      "destination": "/franchises/m13-2017.jpg",
+      "franchiseId": "m13",
+      "fromSeason": 2017,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "12e220acba8927b9",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/70b23104a328.jpg",
+      "teamName": "Honolulu Horndogs",
+      "toSeason": 2017
+    },
+    {
+      "bytes": 56206,
+      "destination": "/franchises/m13.png",
+      "franchiseId": "m13",
+      "fromSeason": 2018,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "e91b46c646a48b9f",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/3f384b75a09a.png",
+      "teamName": "Honolulu Horndogs",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 123925,
+      "destination": "/franchises/m14-2021.jpg",
+      "franchiseId": "m14",
+      "fromSeason": 2021,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "80387e96fcce47a8",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/4973b60813df.jpg",
+      "teamName": "Poulsbo Polliwogs",
+      "toSeason": 2024
+    },
+    {
+      "bytes": 12102,
+      "destination": "/franchises/m14.jpg",
+      "franchiseId": "m14",
+      "fromSeason": 2025,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "b7108348ead0ae17",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/9fe9987182e8.jpg",
+      "teamName": "Poulsbo Pollywogs",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 15577,
+      "destination": "/franchises/m15-2015.svg",
+      "franchiseId": "m15",
+      "fromSeason": 2015,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "5b97d8b69e4cef0d",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/950745cb2389.svg",
+      "teamName": "Warlords of Westeros",
+      "toSeason": 2015
+    },
+    {
+      "bytes": 12715,
+      "destination": "/franchises/m15-2016.svg",
+      "franchiseId": "m15",
+      "fromSeason": 2016,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "ddf0f1e022faafbd",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/b029fd99928f.svg",
+      "teamName": "Warlords of Westeros",
+      "toSeason": 2016
+    },
+    {
+      "bytes": 3486,
+      "destination": "/franchises/m15-2018.png",
+      "franchiseId": "m15",
+      "fromSeason": 2018,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "d09e3bb4e200f831",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/50bf980dfca3.png",
+      "teamName": "Westeros Warlords",
+      "toSeason": 2020
+    },
+    {
+      "bytes": 188661,
+      "destination": "/franchises/m15.png",
+      "franchiseId": "m15",
+      "fromSeason": 2021,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "c0cc357a4491a5d2",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/5ed986bfece0.png",
+      "teamName": "Westeros Warlords",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 117766,
+      "destination": "/franchises/m16.jpg",
+      "franchiseId": "m16",
+      "fromSeason": 2014,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "f46e063f7de46a83",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/33f819dd7168.jpg",
+      "teamName": "L.O.B. Thunder",
+      "toSeason": 2014
+    },
+    {
+      "bytes": 63749,
+      "destination": "/franchises/m17-2015.jpg",
+      "franchiseId": "m17",
+      "fromSeason": 2015,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "ade879cf5d30c10b",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/8df4d7863e0c.jpg",
+      "teamName": "Tijuana Sanchitos",
+      "toSeason": 2015
+    },
+    {
+      "bytes": 206630,
+      "destination": "/franchises/m17-2016.jpg",
+      "franchiseId": "m17",
+      "fromSeason": 2016,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "7559010b08624690",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/2780fa1d5c5c.jpg",
+      "teamName": "Tijuana Sanchitos",
+      "toSeason": 2016
+    },
+    {
+      "bytes": 64945,
+      "destination": "/franchises/m17.svg",
+      "franchiseId": "m17",
+      "fromSeason": 2017,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "c840b880840fe83a",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/tijuana.svg",
+      "teamName": "Tijuana Sanchitos",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 107888,
+      "destination": "/franchises/m18-2014.jpg",
+      "franchiseId": "m18",
+      "fromSeason": 2014,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "8f26607012fc0a9d",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/2275ad6ebc67.jpg",
+      "teamName": "Tittsburgh Feelers",
+      "toSeason": 2014
+    },
+    {
+      "bytes": 24262,
+      "destination": "/franchises/m18-2018.jpg",
+      "franchiseId": "m18",
+      "fromSeason": 2018,
+      "kind": "franchise-logo",
+      "primary": false,
+      "sha256": "d6a6709aa06f205f",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/551b4ee97ac5.jpg",
+      "teamName": "Tittsburgh Feelers",
+      "toSeason": 2020
+    },
+    {
+      "bytes": 26377,
+      "destination": "/franchises/m18.jpg",
+      "franchiseId": "m18",
+      "fromSeason": 2025,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "73ec22fc2e8085a1",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/d9388077ba8f.jpg",
+      "teamName": "Grand Teeton Feelers",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 303368,
+      "destination": "/franchises/m19.png",
+      "franchiseId": "m19",
+      "fromSeason": 2021,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "510e7e6a95a2e34c",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/14e5df9ae130.png",
+      "teamName": "Pasco Pounders",
+      "toSeason": 2025
+    },
+    {
+      "bytes": 177159,
+      "destination": "/franchises/m21.png",
+      "franchiseId": "m21",
+      "fromSeason": 2024,
+      "kind": "franchise-logo",
+      "primary": true,
+      "sha256": "b5b51c13758c3bcb",
+      "sourcePath": "/Users/chilly/Projects/ccDesktopAFFL/site/logos/2e427c7e3ab0.png",
+      "teamName": "Patagonia Pipers",
+      "toSeason": 2025
+    }
+  ],
+  "generatedAt": "2026-08-19T17:09:01Z",
+  "policy": [
+    "Only official AFFL and franchise artwork is copied.",
+    "A franchise without a local asset is marked unavailable; no letter tile or generated stand-in is ever produced.",
+    "Sources are read-only; nothing is written back to a legacy project."
+  ],
+  "unavailable": [
+    {
+      "currentName": "Charleston Chewbacca",
+      "eras": [
+        {
+          "from": 2015,
+          "teamName": "Charleston Chewbacca",
+          "to": 2016
+        },
+        {
+          "from": 2017,
+          "teamName": "Charleston Chewbacca",
+          "to": 2017
+        },
+        {
+          "from": 2018,
+          "teamName": "Charleston Chewbacca",
+          "to": 2018
+        }
+      ],
+      "franchiseId": "m04",
+      "reason": "every logo era points at an external URL that is not available locally; no substitute asset is generated"
+    },
+    {
+      "currentName": "Fairview Fat Cats",
+      "eras": [
+        {
+          "from": 2015,
+          "teamName": "Fairview Fat Cats",
+          "to": 2017
+        }
+      ],
+      "franchiseId": "m06",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Chula Vista Chupacabras",
+      "eras": [
+        {
+          "from": 2016,
+          "teamName": "Green Bay Glory Holes",
+          "to": 2016
+        },
+        {
+          "from": 2017,
+          "teamName": "Chula Vista Chupacabras",
+          "to": 2019
+        },
+        {
+          "from": 2020,
+          "teamName": "Chula Vista Chupacabras",
+          "to": 2020
+        },
+        {
+          "from": 2021,
+          "teamName": "Chula Vista Chupacabras",
+          "to": 2021
+        }
+      ],
+      "franchiseId": "m07",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Goleta Gringos",
+      "eras": [
+        {
+          "from": 2014,
+          "teamName": "Goleta Gringos",
+          "to": 2014
+        },
+        {
+          "from": 2015,
+          "teamName": "Goleta Gringos",
+          "to": 2016
+        },
+        {
+          "from": 2017,
+          "teamName": "Goleta Gringos",
+          "to": 2023
+        }
+      ],
+      "franchiseId": "m08",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Squaw Valley Skinners",
+      "eras": [
+        {
+          "from": 2014,
+          "teamName": "Atlantic City Aquasharks",
+          "to": 2014
+        },
+        {
+          "from": 2017,
+          "teamName": "Squaw Valley Skinners",
+          "to": 2018
+        }
+      ],
+      "franchiseId": "m11",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Honolulu Horndogs",
+      "eras": [
+        {
+          "from": 2014,
+          "teamName": "Honolulu Horndogs",
+          "to": 2015
+        }
+      ],
+      "franchiseId": "m13",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Westeros Warlords",
+      "eras": [
+        {
+          "from": 2014,
+          "teamName": "Warlords of Westeros",
+          "to": 2014
+        },
+        {
+          "from": 2017,
+          "teamName": "Warlords of Westeros",
+          "to": 2017
+        }
+      ],
+      "franchiseId": "m15",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Tijuana Sanchitos",
+      "eras": [
+        {
+          "from": 2014,
+          "teamName": "Tijuana Sanchitos",
+          "to": 2014
+        }
+      ],
+      "franchiseId": "m17",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    },
+    {
+      "currentName": "Grand Teeton Feelers",
+      "eras": [
+        {
+          "from": 2015,
+          "teamName": "Tittsburgh Feelers",
+          "to": 2017
+        },
+        {
+          "from": 2021,
+          "teamName": "Tittsburgh Feelers",
+          "to": 2024
+        }
+      ],
+      "franchiseId": "m18",
+      "reason": "some logo eras point at external URLs that are not available locally"
+    }
+  ]
+}
