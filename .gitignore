@@ -6,6 +6,14 @@ node_modules/
 dist/
 coverage/
 .superpowers/
-data/snapshots/
-data/qa/
-exports/
+
+# Adapter scratch output. Anchored to the repo root so application routes
+# such as app/exports/ and data/generated/ are never swallowed.
+/data/snapshots/
+/data/qa/
+/exports/
+
+# Verification artifacts
+/test-results/
+/playwright-report/
+*.tsbuildinfo

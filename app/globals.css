@@ -1,0 +1,344 @@
+/* ============================================================================
+   AFFL League OS — original token foundation
+   ----------------------------------------------------------------------------
+   Three visual systems, one vocabulary:
+     A. Control Room  (.sys-control)  near-black broadcast field — Now / Season
+     B. Data Atlas    (.sys-atlas)    chrome paper workspace     — search / inspect
+     C. League Journal(.sys-journal)  warm cream editorial       — exports / Wrapped
+
+   Palette is derived from the official AFFL mark (chrome lettering, electric
+   blue lightning, flame gradient, acid-green "est. 2014" on black), sampled
+   from public/brand/affl-mark.png. Nothing here is inherited from a legacy
+   AFFL stylesheet.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: inherit;
+  font-size: inherit;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:where(a) {
+  color: inherit;
+}
+
+/* ------------------------------------------------------------- brand ----- */
+:root {
+  /* Sampled from the official mark. Do not re-derive by eye. */
+  --affl-black: #000000;
+  --affl-navy: #000d47;
+  --affl-blue: #1e6bff;
+  --affl-blue-bright: #4fa3ff;
+  --affl-flame: #fd6001;
+  --affl-ember: #f70301;
+  --affl-acid: #9efd00;
+  --affl-gold: #fef600;
+  --affl-chrome: #e8edf5;
+
+  /* ------------------------------------------------------------ scale --- */
+  --s-1: 2px;
+  --s-2: 4px;
+  --s-3: 6px;
+  --s-4: 8px;
+  --s-5: 12px;
+  --s-6: 16px;
+  --s-7: 20px;
+  --s-8: 24px;
+  --s-9: 32px;
+  --s-10: 40px;
+  --s-11: 56px;
+  --s-12: 72px;
+
+  /* Compact, high-information type ramp. */
+  --t-3xs: 0.625rem;
+  --t-2xs: 0.6875rem;
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.1875rem;
+  --t-xl: 1.5rem;
+  --t-2xl: 1.9375rem;
+  --t-3xl: 2.5rem;
+  --t-4xl: 3.375rem;
+  --t-5xl: 4.5rem;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+
+  --edge: 1px;
+
+  /* Motion explains change; it never loops for decoration. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 110ms;
+  --dur-mid: 190ms;
+  --dur-slow: 320ms;
+
+  --maxw: 1560px;
+
+  /* --------------------------------------------------- semantic: shared --- */
+  --ev-verified: #57b800;
+  --ev-reconstructed: #d59200;
+  --ev-unavailable: #6b7280;
+
+  --delta-up: #35b34a;
+  --delta-down: #e0453a;
+
+  /* Acquisition sources — four distinguishable hues, equal weight. */
+  --src-drafted: #2f6dff;
+  --src-traded: #a259e6;
+  --src-waiver: #e08c00;
+  --src-fa: #12a594;
+
+  /* Phase */
+  --phase-regular: #64748b;
+  --phase-playoff: var(--affl-flame);
+  --phase-championship: var(--affl-gold);
+
+  --font-ui: var(--font-archivo), ui-sans-serif, "Helvetica Neue", Helvetica,
+    sans-serif;
+  --font-display: var(--font-anton), var(--font-archivo), "Haettenschweiler",
+    "Arial Narrow Bold", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* ============================================================ A. CONTROL === */
+/* Near-black broadcast field. Dense telemetry, chrome type, flame + electric
+   blue carrying meaning. This is the Monitor surface. */
+.sys-control {
+  --field: #0a0b0f;
+  --field-sunken: #060709;
+  --field-raised: #101319;
+  --field-panel: #151922;
+  --field-hover: #1b202b;
+
+  --ink: #eef2f8;
+  --ink-strong: #ffffff;
+  --ink-muted: #98a2b3;
+  --ink-faint: #667085;
+
+  --rule: #21262f;
+  --rule-strong: #2f3642;
+
+  --accent: var(--affl-flame);
+  --accent-alt: var(--affl-blue-bright);
+  --accent-ink: #0a0b0f;
+
+  --ev-verified: #8ce000;
+  --ev-reconstructed: #ffc233;
+  --ev-unavailable: #7d8695;
+
+  --delta-up: #56d364;
+  --delta-down: #ff6b5e;
+
+  --src-drafted: #5b9bff;
+  --src-traded: #c08cff;
+  --src-waiver: #ffb020;
+  --src-fa: #2fd4bf;
+
+  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 8px 24px -12px rgba(0, 0, 0, 0.9);
+
+  background: var(--field);
+  color: var(--ink);
+}
+
+/* ============================================================== B. ATLAS === */
+/* Chrome paper. Cool near-white workspace for search, inspect and explorers —
+   deliberately not the same surface as the Control Room. */
+.sys-atlas {
+  --field: #f2f4f8;
+  --field-sunken: #e7ebf1;
+  --field-raised: #ffffff;
+  --field-panel: #ffffff;
+  --field-hover: #eaeff6;
+
+  --ink: #131720;
+  --ink-strong: #000000;
+  --ink-muted: #55607a;
+  --ink-faint: #7d879c;
+
+  --rule: #d5dbe6;
+  --rule-strong: #b9c2d2;
+
+  --accent: #0f4fd8;
+  --accent-alt: var(--affl-flame);
+  --accent-ink: #ffffff;
+
+  --ev-verified: #3d8b00;
+  --ev-reconstructed: #a86c00;
+  --ev-unavailable: #6b7280;
+
+  --shadow-panel: 0 1px 2px rgba(16, 24, 40, 0.06),
+    0 1px 0 rgba(16, 24, 40, 0.04);
+
+  background: var(--field);
+  color: var(--ink);
+}
+
+/* ============================================================ C. JOURNAL === */
+/* Warm cream editorial. Export cards, Wrapped, share views. */
+.sys-journal {
+  --field: #f3ecdd;
+  --field-sunken: #e8dfcb;
+  --field-raised: #fbf7ee;
+  --field-panel: #fbf7ee;
+  --field-hover: #eee5d3;
+
+  --ink: #16130d;
+  --ink-strong: #000000;
+  --ink-muted: #5b5243;
+  --ink-faint: #857a67;
+
+  --rule: #d3c7ad;
+  --rule-strong: #b3a488;
+
+  --accent: var(--affl-flame);
+  --accent-alt: #0f4fd8;
+  --accent-ink: #ffffff;
+
+  --ev-verified: #3d6b00;
+  --ev-reconstructed: #8a5a00;
+  --ev-unavailable: #6b6355;
+
+  --shadow-panel: none;
+
+  background: var(--field);
+  color: var(--ink);
+}
+
+/* ----------------------------------------------------------- base body --- */
+body {
+  font-family: var(--font-ui);
+  font-size: var(--t-base);
+  background: #0a0b0f;
+  color: #eef2f8;
+  font-synthesis-weight: none;
+}
+
+/* Every number in this product aligns. */
+.num,
+table,
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* -------------------------------------------------------------- links ---- */
+a {
+  color: var(--accent, var(--affl-blue-bright));
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--accent-alt, var(--affl-flame));
+}
+
+/* --------------------------------------------------------------- focus --- */
+:focus-visible {
+  outline: 2px solid var(--accent-alt, var(--affl-blue-bright));
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* --------------------------------------------------------- utilities ----- */
+.u-vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.u-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.u-scroll-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+/* ------------------------------------------------------ reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
