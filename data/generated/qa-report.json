@@ -1,0 +1,200 @@
+{
+  "adapterVersion": "affl-adapter-0.1.0",
+  "bindingFailures": [],
+  "coverage": {
+    "auctionBids": {
+      "available": true,
+      "evidenceStatus": "verified",
+      "reason": "2014-2015 drafts carry no bid amounts",
+      "seasonFrom": 2016,
+      "seasonTo": 2025
+    },
+    "benchDetail": {
+      "available": false,
+      "evidenceStatus": "unavailable",
+      "reason": "pre-2018 benches and ownership stints were never collected",
+      "seasonFrom": 2018,
+      "seasonTo": 2025
+    },
+    "matchupPlayerLines": {
+      "available": true,
+      "evidenceStatus": "verified",
+      "reason": "2014-2016 excluded: PF reconciliation fails",
+      "seasonFrom": 2017,
+      "seasonTo": 2025
+    },
+    "seasons": {
+      "available": true,
+      "evidenceStatus": "verified",
+      "seasonFrom": 2014,
+      "seasonTo": 2025
+    },
+    "specialistCaches": {
+      "available": false,
+      "evidenceStatus": "unavailable",
+      "reason": "bio/injury/NGS/college/depth-chart tables hold zero rows"
+    },
+    "standings": {
+      "available": true,
+      "evidenceStatus": "verified",
+      "seasonFrom": 2014,
+      "seasonTo": 2025
+    },
+    "transactions": {
+      "available": true,
+      "evidenceStatus": "verified",
+      "reason": "exact transaction and waiver coverage begins in 2018",
+      "seasonFrom": 2018,
+      "seasonTo": 2025
+    }
+  },
+  "gates": {
+    "aliasCrosswalk": {
+      "detail": "documented source aliases map explicitly through the identity crosswalk",
+      "observed": "m01->m07, m03->m08, m20->m10",
+      "pass": true
+    },
+    "draftCoverage": {
+      "detail": "auction/draft picks complete across every claimed season",
+      "observed": "2124 picks across 12 seasons",
+      "pass": true
+    },
+    "hiatusPreservesFranchise": {
+      "detail": "a hiatus is a gap in one franchise timeline, never a new franchise",
+      "observed": "1 franchise(s) with a hiatus",
+      "pass": true
+    },
+    "historicalTeamNames": {
+      "detail": "each season keeps the team name used that season",
+      "observed": "7 franchises carry more than one historical team name",
+      "pass": true
+    },
+    "noAffl2026": {
+      "detail": "no AFFL 2026 statistical season exists before the draft",
+      "pass": true
+    },
+    "noPersonNames": {
+      "detail": "no real owner or member name appears in generated output",
+      "pass": true
+    },
+    "pf2014to2016Gated": {
+      "detail": "2014-2016 lineup-derived detail does not reconcile and stays unavailable rather than rendering partial rows as complete",
+      "observed": "{\"2014\": \"67/170 cells, worst residual 132.00\", \"2015\": \"72/170 cells, worst residual 150.00\", \"2016\": \"61/170 cells, worst residual 136.00\"}",
+      "pass": true
+    },
+    "pf2017to2025": {
+      "detail": "team-week PF reconciles to the starter sum within 0.05 for 2017-2025",
+      "observed": "{\"2017\": \"192/192 cells\", \"2018\": \"192/192 cells\", \"2019\": \"192/192 cells\", \"2020\": \"192/192 cells\", \"2021\": \"204/204 cells\", \"2022\": \"204/204 cells\", \"2023\": \"204/204 cells\", \"2024\": \"204/204 cells\", \"2025\": \"204/204 cells\"}",
+      "pass": true
+    },
+    "playerIdentity": {
+      "detail": "every player who can reach Player OS has a display name and position, and no duplicate GSIS identity appears in AFFL play",
+      "observed": "startable_named=816, startable_unresolved=0, duplicate_gsis_groups=5 (in AFFL play: 0), espn_players=865, id_map=865, dim_player=5107, dst=32",
+      "pass": true
+    },
+    "playerIdentityQuarantine": {
+      "detail": "unresolved source records are excluded from the published player universe rather than rendered with placeholder identities",
+      "observed": "49 draft-only records without name/position and 5 duplicate GSIS groups quarantined; none started an AFFL game",
+      "pass": true
+    },
+    "seasonRange": {
+      "detail": "seasons are exactly 2014-2025 until a real 2026 draft creates one",
+      "observed": "2014-2025 (12)",
+      "pass": true
+    },
+    "sourcesReadOnly": {
+      "detail": "duckdb read_only=True enforced; sqlite mode=ro + query_only enforced",
+      "pass": true
+    },
+    "teamCounts": {
+      "detail": "ten teams 2014-2016, twelve teams 2017-2025",
+      "observed": "{\"2014\": 10, \"2015\": 10, \"2016\": 10, \"2017\": 12, \"2018\": 12, \"2019\": 12, \"2020\": 12, \"2021\": 12, \"2022\": 12, \"2023\": 12, \"2024\": 12, \"2025\": 12}",
+      "pass": true
+    },
+    "teamSeasonIdentity": {
+      "detail": "every team-season resolves to exactly one canonical franchise and no franchise controls two teams in a season",
+      "observed": "138 team-seasons, 18 canonical franchises",
+      "pass": true
+    }
+  },
+  "generatedAt": "2026-08-19T17:07:19Z",
+  "reconciliation": {
+    "2014": {
+      "cells": 170,
+      "ok": 67,
+      "worstResidual": 132.0
+    },
+    "2015": {
+      "cells": 170,
+      "ok": 72,
+      "worstResidual": 150.0
+    },
+    "2016": {
+      "cells": 170,
+      "ok": 61,
+      "worstResidual": 136.0
+    },
+    "2017": {
+      "cells": 192,
+      "ok": 192,
+      "worstResidual": 0.0
+    },
+    "2018": {
+      "cells": 192,
+      "ok": 192,
+      "worstResidual": 0.0
+    },
+    "2019": {
+      "cells": 192,
+      "ok": 192,
+      "worstResidual": 0.0
+    },
+    "2020": {
+      "cells": 192,
+      "ok": 192,
+      "worstResidual": 0.0
+    },
+    "2021": {
+      "cells": 204,
+      "ok": 204,
+      "worstResidual": 0.0
+    },
+    "2022": {
+      "cells": 204,
+      "ok": 204,
+      "worstResidual": 0.0
+    },
+    "2023": {
+      "cells": 204,
+      "ok": 204,
+      "worstResidual": 0.0
+    },
+    "2024": {
+      "cells": 204,
+      "ok": 204,
+      "worstResidual": 0.0
+    },
+    "2025": {
+      "cells": 204,
+      "ok": 204,
+      "worstResidual": 0.0
+    }
+  },
+  "sources": [
+    {
+      "readOnly": true,
+      "sourceId": "hermes-duckdb",
+      "tier": "ledger"
+    },
+    {
+      "readOnly": true,
+      "sourceId": "cc-sqlite",
+      "tier": "semantic"
+    }
+  ],
+  "warnings": [
+    "matchup player lines unavailable for 2014, 2015, 2016 (PF reconciliation fails)",
+    "49 draft-only player records have no resolved name or position (never started a game); excluded from Player OS",
+    "5 duplicate GSIS groups in the NFL-breadth dimension; none appear in AFFL play, all excluded"
+  ]
+}
