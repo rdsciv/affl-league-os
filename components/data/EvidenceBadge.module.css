@@ -1,0 +1,42 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 2px var(--s-3) 2px var(--s-2);
+  border-radius: var(--radius-xs);
+  border: var(--edge) solid currentColor;
+  color: var(--ev-unavailable);
+  background: color-mix(in oklab, currentColor 10%, transparent);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.verified {
+  color: var(--ev-verified);
+}
+
+.reconstructed {
+  color: var(--ev-reconstructed);
+}
+
+.unavailable {
+  color: var(--ev-unavailable);
+}
+
+/* An unavailable badge is hollow — nothing to fill in. */
+.unavailable .dot {
+  background: none;
+  border: var(--edge) solid currentColor;
+}

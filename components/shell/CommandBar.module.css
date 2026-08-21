@@ -1,0 +1,274 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(var(--s-7), 9vh, 120px) var(--s-5) var(--s-7);
+  background: color-mix(in oklab, #000 62%, transparent);
+  backdrop-filter: blur(3px);
+  animation: fade var(--dur-fast) var(--ease-out);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.panel {
+  width: min(760px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--field-raised);
+  border: var(--edge) solid var(--rule-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 80px -24px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  animation: rise var(--dur-mid) var(--ease-out);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-6);
+  border-bottom: var(--edge) solid var(--rule);
+  flex: none;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--t-md);
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--ink-strong);
+}
+
+.input::placeholder {
+  color: var(--ink-faint);
+}
+
+.esc {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  color: var(--ink-faint);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-xs);
+  padding: 2px var(--s-3);
+  flex: none;
+}
+
+/* The interpretation is shown BEFORE results, so the user always sees what
+   was actually queried. */
+.interpretation {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+  padding: var(--s-4) var(--s-6);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  border-bottom: var(--edge) solid var(--rule);
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  flex: none;
+}
+
+.interpretationLabel {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  padding: 2px var(--s-3);
+  border-radius: var(--radius-xs);
+  border: var(--edge) solid color-mix(in oklab, var(--accent) 40%, transparent);
+  color: var(--ink);
+  background: var(--field-raised);
+}
+
+.results {
+  overflow-y: auto;
+  padding: var(--s-3);
+  min-height: 0;
+}
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: var(--s-4) var(--s-4) var(--s-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  width: 100%;
+  text-align: left;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--t-sm);
+  min-height: 40px;
+}
+
+.item:hover,
+.item[data-active="true"] {
+  background: var(--field-hover);
+}
+
+.itemKind {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  flex: none;
+  width: 68px;
+}
+
+.itemName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemMeta {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  flex: none;
+}
+
+.answer {
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.answerText {
+  font-size: var(--t-lg);
+  color: var(--ink-strong);
+  line-height: 1.35;
+}
+
+.answerRows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.answerRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  background: var(--field-panel);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-sm);
+  font-size: var(--t-sm);
+}
+
+.answerRank {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  width: 20px;
+  flex: none;
+}
+
+.answerLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+.answerValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+
+.answerFoot {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  padding-top: var(--s-3);
+  border-top: var(--edge) solid var(--rule);
+}
+
+.provenance {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.empty {
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.emptyTitle {
+  font-size: var(--t-sm);
+  color: var(--ink-muted);
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.example {
+  text-align: left;
+  padding: var(--s-3) var(--s-4);
+  border: var(--edge) dashed var(--rule);
+  border-radius: var(--radius-sm);
+  color: var(--ink-muted);
+  font-size: var(--t-sm);
+  min-height: 38px;
+}
+
+.example:hover {
+  color: var(--ink);
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--field-hover);
+}
+
+.rejected {
+  padding: var(--s-5) var(--s-6);
+  font-size: var(--t-sm);
+  color: var(--ev-reconstructed);
+  border-bottom: var(--edge) solid var(--rule);
+}

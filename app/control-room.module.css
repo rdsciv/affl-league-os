@@ -1,0 +1,341 @@
+/* The Control Room composition.
+   Deliberately asymmetric: an editorial hero, one wide lead module, then
+   paired modules of unequal weight. No uniform card grid anywhere. */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--s-6);
+  align-items: start;
+}
+
+/* ---------------------------------------------------------------- hero --- */
+
+.hero {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: var(--s-9);
+  align-items: end;
+  padding: var(--s-9) var(--s-9) var(--s-8);
+  background:
+    radial-gradient(
+      120% 150% at 8% 0%,
+      color-mix(in oklab, var(--affl-flame) 16%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      90% 120% at 100% 100%,
+      color-mix(in oklab, var(--affl-blue) 15%, transparent) 0%,
+      transparent 62%
+    ),
+    var(--field-raised);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Field-marking rule, echoing the mark's lightning geometry. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 63px,
+    color-mix(in oklab, var(--ink) 4%, transparent) 63px,
+    color-mix(in oklab, var(--ink) 4%, transparent) 64px
+  );
+  pointer-events: none;
+}
+
+.heroBody {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.heroEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heroName {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6.2vw, 5rem);
+  line-height: 0.88;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: var(--ink-strong);
+  text-wrap: balance;
+}
+
+.heroLede {
+  margin-top: var(--s-6);
+  font-size: var(--t-md);
+  color: var(--ink-muted);
+  max-width: 48ch;
+  line-height: 1.5;
+}
+
+.heroLede b {
+  color: var(--ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.heroStats {
+  display: flex;
+  gap: var(--s-8);
+  margin-top: var(--s-8);
+  flex-wrap: wrap;
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+
+.heroStatValue {
+  font-family: var(--font-mono);
+  font-size: var(--t-xl);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-strong);
+  line-height: 1;
+}
+
+.heroStatLabel {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Champion crest sits opposite the headline, not centred above it. */
+.heroCrest {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  align-items: flex-start;
+  padding-left: var(--s-8);
+  border-left: var(--edge) solid var(--rule);
+}
+
+.crestImage {
+  border-radius: var(--radius-md);
+  border: var(--edge) solid var(--rule-strong);
+  overflow: hidden;
+  background: var(--field-sunken);
+}
+
+.crestCaption {
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.crestCaption b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------- span helpers -- */
+
+.span12 {
+  grid-column: span 12;
+}
+
+.span8 {
+  grid-column: span 8;
+}
+
+.span7 {
+  grid-column: span 7;
+}
+
+.span6 {
+  grid-column: span 6;
+}
+
+.span5 {
+  grid-column: span 5;
+}
+
+.span4 {
+  grid-column: span 4;
+}
+
+/* ------------------------------------------------------- section label --- */
+
+.sectionLabel {
+  grid-column: span 12;
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-5);
+  margin-top: var(--s-6);
+}
+
+.sectionLabel h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.sectionLabel p {
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+}
+
+.sectionRule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* -------------------------------------------------------- gated notice --- */
+
+.gated {
+  grid-column: span 12;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-5);
+  padding: var(--s-6);
+  border: var(--edge) dashed var(--rule-strong);
+  border-radius: var(--radius-md);
+  background: var(--field-sunken);
+}
+
+.gatedHead {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.gatedTitle {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--s-3);
+}
+
+.gatedNote {
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  max-width: 56ch;
+  line-height: 1.55;
+}
+
+.gatedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  flex: 2 1 320px;
+  min-width: 0;
+}
+
+.gatedItem {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  padding-bottom: var(--s-3);
+  border-bottom: var(--edge) solid var(--rule);
+}
+
+.gatedItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.gatedItem b {
+  color: var(--ink);
+  font-weight: 600;
+  flex: none;
+  min-width: 128px;
+}
+
+/* --------------------------------------------------------- conclusions --- */
+
+.statLine {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  font-size: var(--t-sm);
+  padding: var(--s-3) 0;
+  border-bottom: var(--edge) solid var(--rule);
+}
+
+.statLine:last-child {
+  border-bottom: none;
+}
+
+.statLine b {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+
+.statLineLabel {
+  flex: 1;
+  min-width: 0;
+  color: var(--ink-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .span8,
+  .span7,
+  .span6,
+  .span5,
+  .span4 {
+    grid-column: span 12;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-7);
+    padding: var(--s-8) var(--s-6) var(--s-7);
+  }
+
+  .heroCrest {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0;
+    padding-top: var(--s-6);
+    border-left: none;
+    border-top: var(--edge) solid var(--rule);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    gap: var(--s-5);
+  }
+
+  .heroStats {
+    gap: var(--s-6);
+  }
+}

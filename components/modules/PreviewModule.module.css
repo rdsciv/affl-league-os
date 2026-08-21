@@ -1,0 +1,200 @@
+/* The preview contract: conclusion first, at most five rows, one clear way
+   into the full data. Modules are deliberately NOT uniform — `tone` and
+   `span` vary their weight so no screen becomes a grid of equal cards. */
+
+.module {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  padding: var(--s-6);
+  background: var(--field-raised);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-panel);
+  min-width: 0;
+}
+
+/* A lead module carries the screen's primary question. */
+.lead {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--accent) 7%, var(--field-raised)) 0%,
+    var(--field-raised) 42%
+  );
+  border-color: color-mix(in oklab, var(--accent) 34%, var(--rule));
+}
+
+/* A quiet module is supporting context and recedes. */
+.quiet {
+  background: transparent;
+  box-shadow: none;
+  border-style: dashed;
+  border-color: var(--rule);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.lead .title {
+  font-size: var(--t-md);
+}
+
+.summary {
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  max-width: 54ch;
+}
+
+.conclusion {
+  font-family: var(--font-display);
+  font-size: var(--t-3xl);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--ink-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.lead .conclusion {
+  font-size: var(--t-4xl);
+  color: var(--accent);
+}
+
+.conclusionNote {
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  margin-top: var(--s-2);
+  max-width: 46ch;
+}
+
+.rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-top: auto;
+  padding-top: var(--s-4);
+  border-top: var(--edge) solid var(--rule);
+  flex-wrap: wrap;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.actions {
+  display: flex;
+  gap: var(--s-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.open {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  padding: var(--s-2) var(--s-4);
+  min-height: 32px;
+  border: var(--edge) solid color-mix(in oklab, var(--accent) 38%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.open:hover {
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  border-color: var(--accent);
+}
+
+.open svg {
+  flex: none;
+}
+
+.secondary {
+  color: var(--ink-muted);
+  border-color: var(--rule);
+  background: transparent;
+}
+
+.secondary:hover {
+  color: var(--ink);
+  background: var(--field-hover);
+  border-color: var(--rule-strong);
+}
+
+/* ------------------------------------------------------- unavailable ---- */
+
+.missing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-6);
+  border: var(--edge) dashed var(--rule-strong);
+  border-radius: var(--radius-sm);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 7px,
+    color-mix(in oklab, var(--ink-faint) 5%, transparent) 7px,
+    color-mix(in oklab, var(--ink-faint) 5%, transparent) 8px
+  );
+}
+
+.missingReason {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.missingDetail {
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  max-width: 58ch;
+}
+
+@media (max-width: 640px) {
+  .module {
+    padding: var(--s-5);
+  }
+
+  .conclusion,
+  .lead .conclusion {
+    font-size: var(--t-2xl);
+  }
+}

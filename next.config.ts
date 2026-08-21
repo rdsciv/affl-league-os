@@ -1,13 +1,27 @@
+import path from "node:path";
 import type { NextConfig } from "next";
+
+// GitHub Pages serves this project from /<repo>/, so asset and route prefixes
+// must be set at build time. Local dev and Playwright keep serving from root.
+const repo = "affl-league-os";
+const isPages = process.env.DEPLOY_TARGET === "pages";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // Snapshots are generated at build time into data/generated and imported
-  // statically. No database path or credential ever reaches the browser.
-  experimental: {
-    typedRoutes: false,
-  },
+  // Static HTML export — no Node server needed on Pages.
+  output: "export",
+  // Pages has no image optimizer; emit plain <img> sources.
+  images: { unoptimized: true },
+  // Emit /route/index.html so paths resolve without a server rewrite.
+  trailingSlash: true,
+  basePath: isPages ? `/${repo}` : undefined,
+  assetPrefix: isPages ? `/${repo}/` : undefined,
+  // This worktree is its own app root; pin it so Next does not walk up into
+  // the parent checkout looking for a workspace.
+  outputFileTracingRoot: path.resolve(import.meta.dirname),
+  // Playwright drives the dev server over 127.0.0.1.
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
 };
 
 export default nextConfig;

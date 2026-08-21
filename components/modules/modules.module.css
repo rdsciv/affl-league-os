@@ -1,0 +1,379 @@
+/* Shared composition primitives for preview modules.
+   Deliberately several distinct shapes — standings rows, budget bars, a
+   stacked source bar, a power/finish slope, matchup cards — so no surface
+   becomes a grid of identical cards. */
+
+/* ------------------------------------------------------ standings rows --- */
+
+.teamRow {
+  display: grid;
+  grid-template-columns: 18px 28px 1fr auto auto;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 40px;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.teamRow:hover {
+  background: var(--field-hover);
+}
+
+.rank {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.rankTop {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.teamName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.record {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.points {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  min-width: 62px;
+}
+
+.movement {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.up {
+  color: var(--delta-up);
+}
+
+.down {
+  color: var(--delta-down);
+}
+
+.flat {
+  color: var(--ink-faint);
+}
+
+/* --------------------------------------------------------- budget bars --- */
+
+.budgetList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.budgetRow {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  text-decoration: none;
+  color: var(--ink);
+  padding: var(--s-1) var(--s-2);
+  border-radius: var(--radius-sm);
+  min-height: 34px;
+}
+
+.budgetRow:hover {
+  background: var(--field-hover);
+}
+
+.budgetBarWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.budgetLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  font-size: var(--t-xs);
+}
+
+.budgetLabel span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.budgetTrack {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--field-sunken);
+  overflow: hidden;
+}
+
+.budgetFill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    color-mix(in oklab, var(--accent) 55%, var(--accent-alt)) 100%
+  );
+}
+
+.budgetValue {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+  flex: none;
+}
+
+/* ------------------------------------------------- point-source stack ---- */
+
+.sourceBar {
+  display: flex;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: var(--edge) solid var(--rule);
+}
+
+.sourceSeg {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  font-weight: 600;
+  color: #08090c;
+  min-width: 0;
+  overflow: hidden;
+  transition: flex-basis var(--dur-slow) var(--ease-out);
+}
+
+.sourceLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+  margin-top: var(--s-4);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-xs);
+  color: var(--ink-muted);
+}
+
+.legendSwatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.legendValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* ------------------------------------------------ power / finish slope --- */
+
+.slope {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.slopeHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px 54px 58px;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0 var(--s-3) var(--s-2);
+  border-bottom: var(--edge) solid var(--rule);
+}
+
+.slopeRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px 54px 58px;
+  gap: var(--s-3);
+  align-items: center;
+  padding: var(--s-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 38px;
+}
+
+.slopeRow:hover {
+  background: var(--field-hover);
+}
+
+.slopeNum {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+.slopeSwing {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* ------------------------------------------------------- matchup cards --- */
+
+.matchupList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.matchup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  background: var(--field-panel);
+  border: var(--edge) solid var(--rule);
+  border-left: 3px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  text-align: left;
+}
+
+.matchupPlayoff {
+  border-left-color: var(--phase-playoff);
+}
+
+.matchupSide {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+  font-size: var(--t-sm);
+}
+
+.matchupWinner {
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+.matchupLoser {
+  color: var(--ink-muted);
+}
+
+.matchupScore {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-sm);
+}
+
+.matchupMeta {
+  display: flex;
+  gap: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: var(--s-2);
+  border-top: var(--edge) solid var(--rule);
+}
+
+/* ------------------------------------------------------- skill profile --- */
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3) var(--s-6);
+}
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--t-xs);
+}
+
+.skillLabel {
+  color: var(--ink-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skillTrack {
+  height: 7px;
+  background: color-mix(in oklab, var(--ink-faint) 18%, var(--field-sunken));
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Strong categories read as accent, weak ones recede — rank is the signal,
+   so the bar must stay legible at rank 12 as well as rank 1. */
+.skillFill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent-alt);
+  min-width: 3px;
+}
+
+.skillWeak {
+  background: color-mix(in oklab, var(--accent-alt) 42%, var(--ink-faint));
+}
+
+.skillRank {
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+  .skillGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .teamRow {
+    grid-template-columns: 18px 24px 1fr auto;
+  }
+
+  .teamRow .record {
+    display: none;
+  }
+}

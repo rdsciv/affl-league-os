@@ -1,0 +1,265 @@
+.shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------------------------- header --- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: var(--s-7);
+  padding: var(--s-4) var(--s-7);
+  background: color-mix(in oklab, var(--field-sunken) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: var(--edge) solid var(--rule);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  flex: none;
+  text-decoration: none;
+}
+
+.mark {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+}
+
+.wordmarkTop {
+  font-family: var(--font-display);
+  font-size: var(--t-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-strong);
+}
+
+.wordmarkSub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navLink {
+  position: relative;
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.navLink:hover {
+  color: var(--ink);
+  background: var(--field-hover);
+}
+
+.navLink[aria-current="page"] {
+  color: var(--ink-strong);
+}
+
+/* The active marker is a broadcast underscore, not a filled pill. */
+.navLink[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: var(--s-4);
+  right: var(--s-4);
+  bottom: 2px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  flex: none;
+  min-height: 32px;
+  padding: var(--s-2) var(--s-3) var(--s-2) var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+  background: var(--field-raised);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.launcher:hover {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+}
+
+.launcherKeys {
+  font-family: var(--font-mono);
+  font-size: var(--t-3xs);
+  padding: 1px var(--s-2);
+  border: var(--edge) solid var(--rule);
+  border-radius: var(--radius-xs);
+  color: var(--ink-faint);
+}
+
+.launcherText {
+  display: none;
+}
+
+/* -------------------------------------------------------- status strip --- */
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  padding: var(--s-3) var(--s-7);
+  background: var(--field-sunken);
+  border-bottom: var(--edge) solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.status::-webkit-scrollbar {
+  display: none;
+}
+
+.statusPhase {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.statusItem {
+  display: inline-flex;
+  gap: var(--s-3);
+  align-items: baseline;
+}
+
+.statusItem b {
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.statusSep {
+  color: var(--rule-strong);
+}
+
+/* --------------------------------------------------------------- main --- */
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-7) var(--s-12);
+  min-width: 0;
+}
+
+/* -------------------------------------------------------------- footer --- */
+
+.footer {
+  border-top: var(--edge) solid var(--rule);
+  padding: var(--s-7);
+  display: flex;
+  gap: var(--s-6);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: var(--t-2xs);
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.footerNote {
+  max-width: 62ch;
+  line-height: 1.6;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-ui);
+  font-size: var(--t-xs);
+}
+
+@media (min-width: 900px) {
+  .launcherText {
+    display: inline;
+  }
+}
+
+@media (max-width: 860px) {
+  .header {
+    flex-wrap: wrap;
+    gap: var(--s-4);
+    padding: var(--s-4) var(--s-5);
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    padding-bottom: var(--s-1);
+  }
+
+  .launcher {
+    margin-left: auto;
+  }
+
+  .status,
+  .main {
+    padding-left: var(--s-5);
+    padding-right: var(--s-5);
+  }
+
+  .footer {
+    padding: var(--s-6) var(--s-5);
+  }
+}
