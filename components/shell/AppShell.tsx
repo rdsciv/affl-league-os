@@ -35,20 +35,27 @@ export function AppShell({
   return (
     <div className={`${styles.shell} sys-${system}`}>
       <header className={styles.header}>
-        <Link href="/" className={styles.brand}>
-          <Image
-            src={asset("/brand/affl-mark-640.png")}
-            alt="AFFL"
-            width={640}
-            height={238}
-            className={styles.mark}
-            priority
-          />
-          <span className={styles.wordmark}>
-            <span className={styles.wordmarkTop}>League OS</span>
-            <span className={styles.wordmarkSub}>est. 2014</span>
-          </span>
-        </Link>
+        {/* Masthead: the mark sits large ABOVE the nav, poster-style. */}
+        <div className={styles.masthead}>
+          <Link href="/" className={styles.brand}>
+            <Image
+              src={asset("/brand/affl-mark-640.png")}
+              alt="AFFL"
+              width={640}
+              height={238}
+              className={styles.mark}
+              priority
+            />
+            <span className={styles.wordmark}>
+              <span className={`${styles.wordmarkTop} u-liquid`}>League OS</span>
+              <span className={styles.wordmarkSub}>est. 2014</span>
+            </span>
+          </Link>
+
+          <CommandBar className={styles.launcher} keysClassName={styles.launcherKeys}>
+            <span className={styles.launcherText}>Search the league</span>
+          </CommandBar>
+        </div>
 
         <nav className={styles.nav} aria-label="Primary">
           {DESTINATIONS.map((d) => (
@@ -62,10 +69,6 @@ export function AppShell({
             </Link>
           ))}
         </nav>
-
-        <CommandBar className={styles.launcher} keysClassName={styles.launcherKeys}>
-          <span className={styles.launcherText}>Search the league</span>
-        </CommandBar>
       </header>
 
       <div className={styles.status} role="status">

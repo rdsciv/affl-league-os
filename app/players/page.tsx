@@ -29,11 +29,12 @@ export default function PlayersPage() {
     >
       <div className={styles.grid}>
         {featured ? (
-          <section className={styles.hero}>
+          <section className={`${styles.hero} u-grain`}>
+            <span className="u-streaks u-liquid-heat" aria-hidden="true" />
             <div className={styles.heroBody}>
               <h1 className={styles.heroTitle}>
                 <span className={styles.heroEyebrow}>Player OS · {featured.position}</span>
-                <span className={styles.heroName}>{featured.name}</span>
+                <span className={`${styles.heroName} u-liquid u-liquid-heat`}>{featured.name}</span>
               </h1>
               <p className={styles.heroLede}>
                 <b>{formatPoints(featured.career.startedPoints)}</b> started points across{" "}

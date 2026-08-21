@@ -18,7 +18,7 @@ export function StandingsRow({ team }: { team: TeamSeason }) {
       <span className={`${styles.rank} ${team.finalRank === 1 ? styles.rankTop : ""}`}>
         {team.finalRank ?? "—"}
       </span>
-      <TeamMark franchiseId={team.franchiseId} teamName={team.teamName} season={team.season} size={24} />
+      <TeamMark franchiseId={team.franchiseId} teamName={team.teamName} season={team.season} size={34} />
       <span className={styles.teamName}>{team.teamName}</span>
       <span className={styles.record}>{formatRecord(team.wins, team.losses, team.ties)}</span>
       <span className={styles.points}>

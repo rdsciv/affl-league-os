@@ -5,27 +5,54 @@
 
 /* ------------------------------------------------------ standings rows --- */
 
+/* Standings as thick bands rather than a thin table: a large rank numeral,
+   the official crest at readable size, and a gradient edge that lights up on
+   hover. Numbers stay flat and tabular so they remain scannable. */
 .teamRow {
+  position: relative;
   display: grid;
-  grid-template-columns: 18px 28px 1fr auto auto;
+  grid-template-columns: 44px 36px 1fr auto auto;
   align-items: center;
-  gap: var(--s-4);
-  padding: var(--s-3) var(--s-3);
-  border-radius: var(--radius-sm);
-  font-size: var(--t-sm);
+  gap: var(--s-5);
+  padding: var(--s-5) var(--s-5) var(--s-5) var(--s-6);
+  border-radius: var(--radius-md);
+  font-size: var(--t-base);
   text-decoration: none;
   color: var(--ink);
-  min-height: 40px;
-  transition: background var(--dur-fast) var(--ease-out);
+  min-height: 62px;
+  background: var(--field-raised);
+  overflow: hidden;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+/* Gradient spine on the leading edge. */
+.teamRow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-image: var(--liquid-flame);
+  opacity: 0.28;
+  transition: opacity var(--dur-fast) var(--ease-out);
 }
 
 .teamRow:hover {
   background: var(--field-hover);
+  transform: translateX(2px);
+}
+
+.teamRow:hover::before {
+  opacity: 1;
 }
 
 .rank {
-  font-family: var(--font-mono);
-  font-size: var(--t-xs);
+  font-family: var(--font-display);
+  font-size: var(--t-2xl);
+  line-height: 1;
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
   text-align: right;

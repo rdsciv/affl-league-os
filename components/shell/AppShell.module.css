@@ -5,30 +5,40 @@
 }
 
 /* ------------------------------------------------------------- header --- */
+/* Poster masthead: the official mark sits large on its own line, with the
+   nav as a rule-separated row beneath it. */
 
 .header {
   position: sticky;
   top: 0;
   z-index: 40;
   display: flex;
-  align-items: center;
-  gap: var(--s-7);
-  padding: var(--s-4) var(--s-7);
-  background: color-mix(in oklab, var(--field-sunken) 88%, transparent);
-  backdrop-filter: blur(12px);
+  flex-direction: column;
+  gap: var(--s-5);
+  padding: var(--s-7) var(--s-8) 0;
+  background: color-mix(in oklab, var(--field) 92%, transparent);
+  backdrop-filter: blur(14px);
   border-bottom: var(--edge) solid var(--rule);
+}
+
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-6);
+  flex-wrap: wrap;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--s-4);
+  gap: var(--s-6);
   flex: none;
   text-decoration: none;
 }
 
 .mark {
-  height: 30px;
+  height: 62px;
   width: auto;
   object-fit: contain;
 }
@@ -37,21 +47,22 @@
   display: flex;
   flex-direction: column;
   line-height: 1;
-  gap: 2px;
+  gap: var(--s-2);
+  padding-left: var(--s-6);
+  border-left: var(--edge) solid var(--rule);
 }
 
 .wordmarkTop {
-  font-family: var(--font-display);
-  font-size: var(--t-sm);
-  letter-spacing: 0.05em;
+  font-size: var(--t-xl);
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--ink-strong);
 }
 
 .wordmarkSub {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  font-size: var(--t-3xs);
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
@@ -59,11 +70,12 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--s-1);
-  flex: 1;
+  gap: var(--s-6);
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
+  border-top: var(--edge) solid var(--rule);
+  padding-top: var(--s-2);
 }
 
 .nav::-webkit-scrollbar {
@@ -72,37 +84,35 @@
 
 .navLink {
   position: relative;
-  padding: var(--s-3) var(--s-4);
-  font-size: var(--t-xs);
-  font-weight: 600;
+  padding: var(--s-4) 0 var(--s-5);
+  font-family: var(--font-display);
+  font-size: var(--t-md);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-muted);
   text-decoration: none;
-  border-radius: var(--radius-sm);
   white-space: nowrap;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
 .navLink:hover {
-  color: var(--ink);
-  background: var(--field-hover);
+  color: var(--ink-strong);
 }
 
 .navLink[aria-current="page"] {
   color: var(--ink-strong);
 }
 
-/* The active marker is a broadcast underscore, not a filled pill. */
+/* Active marker is a liquid gradient underscore. */
 .navLink[aria-current="page"]::after {
   content: "";
   position: absolute;
-  left: var(--s-4);
-  right: var(--s-4);
-  bottom: 2px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-image: var(--liquid-flame);
+  border-radius: 2px;
 }
 
 .launcher {
@@ -237,20 +247,23 @@
 
 @media (max-width: 860px) {
   .header {
-    flex-wrap: wrap;
-    gap: var(--s-4);
-    padding: var(--s-4) var(--s-5);
+    padding: var(--s-6) var(--s-5) 0;
+  }
+
+  .mark {
+    height: 44px;
+  }
+
+  .wordmarkTop {
+    font-size: var(--t-lg);
   }
 
   .nav {
-    order: 3;
-    width: 100%;
-    flex-basis: 100%;
-    padding-bottom: var(--s-1);
+    gap: var(--s-5);
   }
 
-  .launcher {
-    margin-left: auto;
+  .navLink {
+    font-size: var(--t-sm);
   }
 
   .status,

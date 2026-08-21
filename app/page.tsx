@@ -74,11 +74,14 @@ export default function ControlRoomPage() {
     >
       <div className={styles.grid}>
         {/* ------------------------------------------------------- hero --- */}
-        <section className={styles.hero}>
+        <section className={`${styles.hero} u-grain`}>
+          <span className="u-streaks" aria-hidden="true" />
           <div className={styles.heroBody}>
             <h1 className={styles.heroTitle}>
               <span className={styles.heroEyebrow}>AFFL {season} · Final</span>
-              <span className={styles.heroName}>{champion?.teamName ?? "Season on record"}</span>
+              <span className={`${styles.heroName} u-liquid`}>
+                {champion?.teamName ?? "Season on record"}
+              </span>
             </h1>
             {championRow ? (
               <p className={styles.heroLede}>

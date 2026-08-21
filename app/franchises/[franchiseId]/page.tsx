@@ -66,13 +66,16 @@ export default async function FranchisePage({
       ]}
     >
       <div className={styles.grid}>
-        <section className={styles.hero}>
+        <section className={`${styles.hero} u-grain`}>
+          <span className="u-streaks u-liquid-cool" aria-hidden="true" />
           <div className={styles.heroBody}>
             <h1 className={styles.heroTitle}>
               <span className={styles.heroEyebrow}>
                 AFFL franchise · {franchise.firstSeason}–{franchise.lastSeason}
               </span>
-              <span className={styles.heroName}>{franchise.currentName}</span>
+              <span className={`${styles.heroName} u-liquid u-liquid-cool`}>
+                {franchise.currentName}
+              </span>
             </h1>
             <p className={styles.heroLede}>
               <b>{formatRecord(franchise.totals.wins, franchise.totals.losses, franchise.totals.ties)}</b>{" "}
