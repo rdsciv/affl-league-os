@@ -9,6 +9,7 @@ import { PointSourceBar } from "@/components/modules/PointSourceBar";
 import { PowerLuckSlope } from "@/components/modules/PowerLuckSlope";
 import { MatchupCard, SkillProfile } from "@/components/modules/MatchupPulse";
 import { franchiseAsset } from "@/components/data/TeamMark";
+import { asset } from "@/lib/asset";
 import { loadShowcase } from "@/lib/data/load";
 import {
   formatInt,
@@ -117,7 +118,7 @@ export default function ControlRoomPage() {
           <div className={styles.heroCrest}>
             {crest && champion ? (
               <span className={styles.crestImage}>
-                <Image src={crest} alt="" width={132} height={132} aria-hidden="true" />
+                <Image src={asset(crest)} alt="" width={132} height={132} aria-hidden="true" />
               </span>
             ) : null}
             <p className={styles.crestCaption}>

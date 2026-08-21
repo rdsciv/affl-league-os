@@ -1,5 +1,6 @@
 import Image from "next/image";
 import manifest from "@/public/asset-manifest.json";
+import { asset } from "@/lib/asset";
 import styles from "./TeamMark.module.css";
 
 interface AssetRecord {
@@ -57,7 +58,7 @@ export function TeamMark({
   return (
     <span className={styles.mark} style={{ width: size, height: size }}>
       <Image
-        src={src}
+        src={asset(src)}
         alt=""
         width={size * 2}
         height={size * 2}

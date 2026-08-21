@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath: isPages ? `/${repo}` : undefined,
   assetPrefix: isPages ? `/${repo}/` : undefined,
+  // basePath rewrites routes and _next/ assets, but `unoptimized` images emit
+  // their src verbatim — so public/ paths must be prefixed by lib/asset.ts.
+  env: { NEXT_PUBLIC_BASE_PATH: isPages ? `/${repo}` : "" },
   // This worktree is its own app root; pin it so Next does not walk up into
   // the parent checkout looking for a workspace.
   outputFileTracingRoot: path.resolve(import.meta.dirname),

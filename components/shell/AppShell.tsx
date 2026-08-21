@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CommandBar } from "./CommandBar";
+import { asset } from "@/lib/asset";
 import styles from "./AppShell.module.css";
 
 export const DESTINATIONS = [
@@ -36,7 +37,7 @@ export function AppShell({
       <header className={styles.header}>
         <Link href="/" className={styles.brand}>
           <Image
-            src="/brand/affl-mark-640.png"
+            src={asset("/brand/affl-mark-640.png")}
             alt="AFFL"
             width={640}
             height={238}

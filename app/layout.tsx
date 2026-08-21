@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "The AFFL control room, data atlas, and league archive. Every number verified, reconstructed, or explicitly unavailable.",
-  icons: { icon: "/brand/favicon-64.png" },
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brand/favicon-64.png` },
 };
 
 export const viewport: Viewport = {
